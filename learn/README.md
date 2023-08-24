@@ -1,0 +1,1 @@
+This repository serves as a learning guide for the development of the web application of the GOfit+ app
