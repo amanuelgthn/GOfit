@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400&family=Nunito:wght@200;300;400;600&display=swap');
 *{
-    font-family: 'Nunito Sans', sans-serif;
-    margin:0; padding:0;
+    font-family: 'Nunito', sans-serif;
+    margin: 0; padding: 0;
     box-sizing: border-box;
     text-decoration: none;
     outline: none; border: none;
@@ -10,16 +9,58 @@
     transition: all .2s linear;
 }
 
-$black : #000;
-$white : #fff;
-$light-white: #aaa;
-$light-bg: #111;
-
-html{
+html {
     font-size: 62.5%;
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
     overflow-x: hidden;
+    &::-webkit-scrollbar{
+        width: 1rem;
+    }
+    &::-webkit-scrollbar{
+        background: black;
+    }
+    &::-webkit-scrollbar-track{
+        background: black;
+    }
+    &::-webkit-scrollbar-thumb{
+        background: $red;
+    }
+}
 
+body {
+    background: black;
+}
+.header{
+    position: fixed;
+    top:0; right:0; left:0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0 9%;
+    background: white;
+}
+.logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: goldenrod;
 
+    span{
+        color: black;
+    }
+}
+.navbar a{
+    display: inline-block;
+    padding: 1.5rem 2rem;
+    font-size: 1.7rem;
+    color: black;
+
+    &:hover{
+        background: grey;
+    }
+}
+#menu-btn{
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
 }
