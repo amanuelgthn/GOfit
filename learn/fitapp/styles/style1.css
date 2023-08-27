@@ -9,6 +9,8 @@
     transition: all .2s linear;
 }
 
+
+
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
@@ -24,7 +26,7 @@ html {
         background: black;
     }
     &::-webkit-scrollbar-thumb{
-        background: $red;
+        background: red;
     }
 }
 
@@ -39,28 +41,64 @@ body {
     justify-content: space-between;
     padding:0 9%;
     background: white;
-}
-.logo{
-    font-size: 2.5rem;
-    font-weight: bolder;
-    color: goldenrod;
 
+    .logo{
+        font-size: 2.5rem;
+        font-weight: bolder;
+        color: goldenrod;
+        
     span{
-        color: black;
+        color:red;
     }
-}
+  }
 .navbar a{
     display: inline-block;
     padding: 1.5rem 2rem;
     font-size: 1.7rem;
-    color: black;
+    color:black;
+    text-transform: uppercase;
 
     &:hover{
-        background: grey;
+        background: goldenrod;
     }
 }
-#menu-btn{
-    font-size: 3rem;
-    color: white;
-    cursor: pointer;
+
+
+/*media queies*/
+@media (max-width:991px){
+    html{
+        font-size: 55%;
+    }
+    .header{
+        padding:0 2rem;
+    }
+}
+@media (max-width:450px){
+    .header{
+        padding:2rem;
+        
+        .navbar{
+            position: absolute;
+            top:99%; left:0; right:0;
+            background-color: black;
+
+            a{
+                display: block;
+                font-size: 2rem;
+            }
+        }
+    }
+}
+@media (max-width:768px){
+    #menu-btn{
+        font-size: 3rem;
+        color:black;
+        cursor: pointer;
+        display:inline-block;
+    }
+    
+        html{
+            font-size: 55%;
+        }
+    }
 }
