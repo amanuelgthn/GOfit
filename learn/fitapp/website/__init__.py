@@ -6,13 +6,17 @@ from flask_login import LoginManager
 
 
 db = SQLAlchemy()
-DB_NAME = 'database.db'
+DB_NAME = 'fit_db'
+DB_USER = 'fit_usr'
+DB_PASS = 'fit_usr_pwd'
+DB_HOST = 'localhost'
+
 
 def create_app():
     app = Flask(__name__)
-    """ app.config['SECRET_KEY'] = 'secret_key_gofit'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///{}'.format(DB_NAME)
-    db.init_app(app) """
+    app.config['SECRET_KEY'] = 'secret_key_gofit'
+    app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://{}:{}@{}/{}".format(DB_USER, DB_PASS, DB_HOST, DB_NAME)
+    db.init_app(app)
 
     # Static file congfiguration
     app.static_folder = 'static'
@@ -26,6 +30,13 @@ def create_app():
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
 
+    from .templates.models.base_model import BaseModel
 
+    create_database(app)
 
     return app
+
+def create_database(app):
+    with app.app_context():
+        db.create_all()
+    print("Database created successfully!")
