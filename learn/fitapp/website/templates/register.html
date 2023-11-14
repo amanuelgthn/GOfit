@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href={{ url_for('static', filename="styles/register.css") }}>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="container">
+      <form method="POST">
+        <div class="title">Register</div>
+          <div class="input-box underline">
+            <label for="email">Email</label>
+            <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="Enter Your Email"
+                required
+            />
+          <div class="underline"></div>
+        </div>
+        <div class="input-box underline">
+          <label for="FirstName">First Name</label>
+          <input
+              type="text"
+              class="form-control"
+              id="FirstName"
+              name="FirstName"
+              placeholder="Enter Your First Name"
+              required
+          />
+        <div class="underline"></div>
+        </div>
+        <div class="input-box underline">
+          <label for="LastName">Last Name</label>
+          <input
+              type="text"
+              class="form-control"
+              id="LastName"
+              name="LastName"
+              placeholder="Enter Your Last Name"
+              required
+          />
+        <div class="underline"></div>
+        </div>
+        <div class="input-box">
+          <label for="password1">New Password</label>
+          <input
+              type="password"
+              id="password1"
+              name="password1"
+              placeholder="Create Your Password"
+              required
+            />
+          <div class="underline"></div>
+        </div>
+        <div class="input-box">
+          <label for="password2">Confirm New Password</label>
+          <input
+              type="password"
+              id="password2"
+              name="password2"
+              placeholder="Confirm Your Password"
+              required
+            />
+          <div class="underline"></div>
+        </div>
+        <div class="input-box button">
+          <input type="submit" name="" value="Continue">
+        </div>
+      </form>
+  </body>
+</html>
