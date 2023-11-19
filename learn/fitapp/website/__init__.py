@@ -7,7 +7,7 @@ from flask_login import LoginManager
 
 db = SQLAlchemy()
 DB_NAME = 'fit_db'
-DB_USER = 'fit_usr'
+DB_USER = 'fit_usr' 
 DB_PASS = 'fit_usr_pwd'
 DB_HOST = 'localhost'
 
@@ -30,8 +30,7 @@ def create_app():
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
 
-    from .templates.models.base_model import BaseModel
-
+    from .templates.models import User
     create_database(app)
 
     return app
