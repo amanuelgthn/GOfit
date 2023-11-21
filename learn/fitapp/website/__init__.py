@@ -6,7 +6,7 @@ from flask_login import LoginManager
 
 
 db = SQLAlchemy()
-DB_NAME = 'fit_db'
+DB_NAME = 'fit_db_1'
 DB_USER = 'fit_usr' 
 DB_PASS = 'fit_usr_pwd'
 DB_HOST = 'localhost'

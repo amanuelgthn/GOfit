@@ -1,6 +1,13 @@
-let menu = document.querySelector("#menu-btn");
-let navbar = document.querySelector(".header .navbar");
-
-menu.onclick = () =>{
-    menu.classList.toggle("fa-times");
-}
+function closeAlert() {
+    const alertDiv = document.querySelectorAll('.alert');
+    alertDiv.forEach((div) => {
+      div.addEventListener('click', (e) => {
+        if (e.target.classList.contains('close-btn')) {
+          div.style.display = 'none';
+        }
+      });
+    });
+  }
+  document.addEventListener('DOMContentLoaded', () => {
+    closeAlert();
+  });

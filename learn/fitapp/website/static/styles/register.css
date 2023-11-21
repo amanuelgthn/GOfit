@@ -36,7 +36,33 @@ html, body{
   font-weight: 600;
   margin: 20px 0 10px 0;
   position: relative;
-}/* 
+}
+.alert {
+  position: relative;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.alert-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+.alert-error {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  color: #000;
+  text-decoration: none;
+  font-size: 20px;
+}
+/* 
 .container form .title:before{
   content: '';
   position: absolute;

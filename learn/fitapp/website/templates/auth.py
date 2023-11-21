@@ -12,23 +12,24 @@ auth = Blueprint('auth', __name__)
 
 @auth.route('/login', methods=['GET','POST'])
 def login():
-    """
     if request.method == 'POST':
-        email = request.POST.get('email')
-        password = request.POST.get('password')
+        email = request.form.get('email')
+        password = request.form.get('password')
         print(email, password)
 
         user = User.query.filter_by(email=email).first()
         if user:
             if password == user.password:
                 flash("Logged in Successfully", category="success")
-                login_user(user, remember=True)
-                return redirect(url_for('views.dashboard'))"""
-    data = request.form
-    print (data)
+                return redirect(url_for('views.dashboard'))
+        else:
+            flash("Email or Password incorrect", category="error")
+            return render_template("login.html",)
 
     return render_template('login.html')
 
+
+@login_required
 @auth.route('/logout')
 def logout():
     return "<p>Logout</p>"
@@ -38,7 +39,7 @@ def sign_up():
     if request.method == 'POST':
         email = request.form.get('email')
         firstName = request.form.get('firstName')
-        #lastName = request.form.get('lastName')
+        lastName = request.form.get('lastName')
         password1 = request.form.get('password1')
         password2 = request.form.get('password2')
         
@@ -48,20 +49,14 @@ def sign_up():
             flash("Email already Exists please login", category="error")
         elif len(firstName) < 3:
             flash("First Name must be at least 3 characters", category="error")
-        #elif len(lastName) < 3:
-            #flash("Last Name must be at least 3 characters", category="error")
+        elif len(lastName) < 3:
+            flash("Last Name must be at least 3 characters", category="error")
         elif password1 != password2:
             flash("Password must be the same")
         else:
-            new_user = User(email=email, firstName=firstName, lastName=lastName, password=password1, password2=password2)
+            new_user = User(email=email, firstName=firstName, lastName=lastName, password=password1)
             db.session.add(new_user)
             db.session.commit()
-            login_user(new_user, remember=True)
-            flash('Successfully created {}'.format(new_user))
+            flash('Successfully created {}'.format(new_user.firstName), 'success')
             return redirect(url_for('views.dashboard'))
-    return render_template('register.html', user=current_user)
-
-            
-
-
     return render_template('register.html')
