@@ -10,4 +10,10 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(150))
     firstName = db.Column(db.String(150))
     lastName = db.Column(db.String(150))
-    
+    workouts = db.relationship('Workout')
+
+class Workout(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    data = db.Column(db.String(1000))
+    workout_name = db.Column(db.String(150))
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
