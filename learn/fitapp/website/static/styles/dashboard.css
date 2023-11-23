@@ -111,7 +111,11 @@ button a:any-link {
     color: var(--TEXT-COLOR);
     text-decoration: none;
 }
-
+section.workout {
+    color: antiquewhite;
+    display: grid;
+    text-align: center;
+}
 button :hover, button a:focus {
     transform: scale(1.2);
     transition: all 0.3s;

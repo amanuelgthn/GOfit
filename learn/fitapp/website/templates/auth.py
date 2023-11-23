@@ -21,6 +21,7 @@ def login():
         if user:
             if password == user.password:
                 flash("Logged in Successfully", category="success")
+                login_user(user)
                 return redirect(url_for('views.dashboard'))
         else:
             flash("Email or Password incorrect", category="error")
@@ -58,5 +59,6 @@ def sign_up():
             db.session.add(new_user)
             db.session.commit()
             flash('Successfully created {}'.format(new_user.firstName), 'success')
+            login_user(new_user)
             return redirect(url_for('views.dashboard'))
     return render_template('register.html')
