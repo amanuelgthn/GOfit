@@ -1,7 +1,7 @@
 # GOfit
 
 ## GOfit+
-###GOfit+ is a web application that helps users achieve their fitness goals by providing them with personalized workout plans, tracking their progress, and offering a supportive community.
+### GOfit+ is a web application that helps users achieve their fitness goals by providing them with personalized workout plans, tracking their progress, and offering a supportive community.
 
 ## Features
 Personalized workout plans: GOfit+ creates workout plans based on the user's fitness level, goals, and preferences.
