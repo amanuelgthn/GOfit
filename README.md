@@ -11,6 +11,7 @@ Supportive community: GOfit+ offers a supportive community of users who are all 
 ## To run the application
 To run the application, use the flask command or python -m flask. You need to tell the Flask where your application is with the --app option.
 
+$ cd learn/fitapp
 $ flask --app main run
  * Serving Flask app 'main'
  * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
